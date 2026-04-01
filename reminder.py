@@ -7,13 +7,97 @@ import pytz
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID   = os.environ["TELEGRAM_CHAT_ID"]
 
-# ── Get current hour in Eastern Time (Payal's timezone) ─────
-eastern = pytz.timezone("America/New_York")
-hour    = datetime.now(eastern).hour
+# ── Get current time in Eastern Time (Payal's timezone) ─────
+eastern    = pytz.timezone("America/New_York")
+now        = datetime.now(eastern)
+hour       = now.hour
+weekday    = now.weekday()   # 0=Monday, 6=Sunday
 
 # ── Only send between 6 AM and 10 PM ────────────────────────
 if hour < 6 or hour > 22:
     print(f"Quiet hours ({hour}:00 ET) — no message sent.")
+    exit(0)
+
+# ── Weekly Grocery List — every Sunday at 9 AM ───────────────
+GROCERY_LIST = """🛒 *Weekly Grocery List — Payal's Health Plan*
+
+_Shop today so you're set for the whole week!_
+
+🥚 *PROTEINS*
+• Eggs (1 dozen)
+• Greek yogurt — plain, full fat, GF (2 large tubs)
+• Moong dal / Masoor dal (1 lb each)
+• Rajma / Kidney beans (1 can or dry)
+• Chickpeas / Chana (1 can or dry)
+• Plant-based protein powder (GF, unsweetened)
+
+🌾 *GLUTEN-FREE GRAINS*
+• Certified GF rolled oats (1 bag)
+• Quinoa (1 lb)
+• Jowar flour / Bajra flour (for rotis)
+• Brown rice (small bag — limit portions)
+• GF rice cakes (1 pack)
+
+🥬 *VEGETABLES — Fresh*
+• Spinach (2 large bags — iron + folate)
+• Broccoli (1 head)
+• Zucchini (2)
+• Bell peppers — red/yellow/green (3)
+• Cucumber (3)
+• Carrots (1 bag)
+• Tomatoes (4-5)
+• Garlic (1 bulb)
+• Beets (2-3 fresh or 1 can)
+
+🍎 *FRUITS*
+• Blueberries / Strawberries (1 pint)
+• Apples (4-5)
+• Lemons (3-4)
+• Pomegranate (1) or pomegranate seeds (1 pack)
+• Bananas (3-4 — for post-workout)
+
+🥜 *NUTS & SEEDS*
+• Walnuts (1 bag — Omega-3 for triglycerides!)
+• Almonds (1 bag)
+• Chia seeds (1 bag)
+• Ground flaxseed (1 bag)
+• Pumpkin seeds (1 bag — magnesium + zinc)
+
+🧴 *DAIRY*
+• Whole milk or almond milk (fortified with D & B12)
+• Buttermilk / Chaas (plain, no salt)
+• Ghee (small jar)
+
+🌿 *SPICES & PANTRY (check stock)*
+• Turmeric powder
+• Ginger (fresh or powder)
+• Olive oil (for cooking)
+• Almond butter (GF, no added sugar)
+• Green tea bags
+
+💊 *SUPPLEMENTS — check if running low*
+• Vitamin B12 (methylcobalamin 1000mcg)
+• Vitamin D3 5000 IU + K2 100mcg
+• Omega-3 algae-based 1000mg EPA+DHA
+• Magnesium Glycinate 300mg
+• Methylfolate 400mcg
+• Vitamin C 500mg
+
+❌ *DO NOT BUY*
+• Any wheat/gluten products
+• White bread, pasta, naan, regular rotis
+• Sugary drinks, juice boxes
+• Packaged GF cookies/snacks (high sugar)
+• Soy milk in large amounts (worsens adenomyosis)
+
+_Estimated budget: $80-100/week for all fresh items_ 🛒"""
+
+# Send grocery list every Sunday at 9 AM
+if weekday == 6 and hour == 9:
+    url  = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    data = {"chat_id": CHAT_ID, "text": GROCERY_LIST, "parse_mode": "Markdown", "disable_web_page_preview": True}
+    requests.post(url, data=data)
+    print("Weekly grocery list sent!")
     exit(0)
 
 # ── Hourly messages ──────────────────────────────────────────
