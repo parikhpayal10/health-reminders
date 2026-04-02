@@ -104,28 +104,27 @@ if weekday == 6 and hour == 9:
 reminders = {
     5: """💪 *WORKOUT TIME!* — 5:00 AM (45 min)
 
-*Today's Focus + Follow Along Videos:*
-
 🏋️ *Mon/Wed* → Strength Training
-  Search YouTube: "Caroline Girvan beginner upper body"
-  OR: "Sydney Cummings 30 min strength no jumping"
+  👉 https://www.youtube.com/@CarolineGirvan
+  Search: "beginner full body strength"
   _(#1 fix for insulin resistance)_
 
 🧘 *Tue/Thu* → Yoga for Pelvic Health
-  Search YouTube: "Yoga With Adriene gentle morning yoga"
-  OR: "yoga for adenomyosis pain relief"
+  👉 https://www.youtube.com/@yogawithadriene
+  Search: "gentle morning yoga" or "yoga for cramps"
   _(reduces adenomyosis pain + inflammation)_
 
 🚴 *Fri* → Low-Impact Cardio
-  Search YouTube: "Leslie Sansone 30 minute walk at home"
-  OR: "low impact cardio no jumping Sydney Cummings"
-  _(raises HDL cholesterol — yours is borderline at 51)_
+  👉 https://www.youtube.com/@WalkAtHome
+  Search: "30 minute walk" (Leslie Sansone)
+  _(raises your HDL cholesterol)_
 
-🚶 *Sat* → Outdoor Walk 45-60 min
-  No video needed — go outside for Vitamin D bonus! ☀️
+🚶 *Sat* → Outdoor Walk 45-60 min ☀️
+  _(Go outside — free Vitamin D for your deficiency!)_
 
 🛌 *Sun* → Rest + Light Stretch
-  Search YouTube: "Yoga With Adriene Sunday reset"
+  👉 https://www.youtube.com/@yogawithadriene
+  Search: "Sunday reset yoga"
 
 You're doing this for your health — let's go! 💥""",
 
