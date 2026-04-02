@@ -13,8 +13,8 @@ now        = datetime.now(eastern)
 hour       = now.hour
 weekday    = now.weekday()   # 0=Monday, 6=Sunday
 
-# ── Only send between 6 AM and 10 PM ────────────────────────
-if hour < 6 or hour > 22:
+# ── Only send between 5 AM and 10 PM ────────────────────────
+if hour < 5 or hour > 22:
     print(f"Quiet hours ({hour}:00 ET) — no message sent.")
     exit(0)
 
@@ -102,24 +102,43 @@ if weekday == 6 and hour == 9:
 
 # ── Hourly messages ──────────────────────────────────────────
 reminders = {
+    5: """💪 *WORKOUT TIME!* — 5:00 AM (45 min)
+
+*Today's Focus:*
+• 🏋️ *Mon/Wed* → Strength Training
+  _(#1 fix for insulin resistance — builds metabolic muscle)_
+• 🧘 *Tue/Thu* → Yoga/Stretching
+  _(reduces adenomyosis pain + inflammation)_
+• 🚴 *Fri* → Low-impact cardio
+  _(raises HDL cholesterol — yours is borderline at 51)_
+• 🚶 *Sat* → 45-60 min outdoor walk
+  _(sunlight = Vitamin D bonus!)_
+• 🛌 *Sun* → Rest day — light stretching only
+
+You're doing this for your health — let's go! 💥""",
+
     6: """🌅 *Good Morning, Payal!* — 6:00 AM
 
-▶ Drink 1 glass of *warm water* right now
+Great job finishing your workout! Now:
+▶ Drink 1 large glass of *warm water* right now
 ☀️ Get *15 min sunlight* outside (critical for Vitamin D deficiency!)
-💊 Get your supplements ready for breakfast
-🧘 Light stretching before exercise
+🚿 Fresh up and get ready for breakfast
 
 _Triglycerides goal: <150 | Your current: 190 — you're working on it!_""",
 
-    7: """🏃 *Morning Exercise Time!* — 7:00 AM
+    7: """🥤 *Post-Workout Nutrition!* — 7:00 AM
 
-Today's plan:
-• *Mon/Wed/Fri* → 30 min brisk walk
-• *Tue/Thu* → Yoga or stretching
-• *Sat* → Long 45 min outdoor walk (bonus Vitamin D!)
-• *Sun* → Rest day 🛌
+Eat within 30 min of finishing workout:
 
-💡 Exercise is your #1 tool against insulin resistance (Hyperinsulinemia)""",
+✅ Plant-based protein shake (GF, unsweetened)
+   OR
+✅ 2 boiled eggs + 1 small banana
+
+This window is critical for:
+• Muscle recovery
+• Blood sugar stabilization
+
+💧 Drink 2 glasses of water — you lost fluids during workout!""",
 
     8: """🍳 *Breakfast Time!* — 8:00 AM (~350 cal)
 
@@ -214,51 +233,23 @@ and can worsen *adenomyosis* inflammation.""",
 
 ❌ No packaged snacks — even "GF" ones are full of sugar!""",
 
-    16: """⚡ *Pre-Workout Prep!* — 4:00 PM
+    16: """⏰ *Tomorrow's Workout Prep!* — 4:00 PM
 
-Workout is in 1.5 hours — prepare now:
+Workout is at *5:00 AM tomorrow!*
 
-💧 Drink 2 glasses of water
-🍌 If feeling low energy: 5 extra walnuts or ½ banana
-👟 Lay out your workout clothes
+💧 Drink 2 glasses of water now
+👟 Set out your workout clothes tonight
 🎵 Prepare your workout playlist
+⏰ Set alarm for *4:45 AM*
+🛏️ Aim to sleep by 9:30 PM (7 hrs before 5 AM!)
 
-Today's workout:
+Tomorrow's workout:
 • Mon → Upper body strength (dumbbells/bands)
 • Wed → Lower body (squats, lunges, glute bridges)
 • Fri → Low-impact cardio (cycling/elliptical)
 • Tue/Thu → Yoga""",
 
-    17: """💪 *WORKOUT TIME!* — 5:30 PM (45 min)
-
-*Today's Focus:*
-• 🏋️ *Mon/Wed* → Strength Training
-  _(#1 fix for insulin resistance — builds metabolic muscle)_
-• 🧘 *Tue/Thu* → Yoga/Stretching
-  _(reduces adenomyosis pain + inflammation)_
-• 🚴 *Fri* → Low-impact cardio
-  _(raises HDL cholesterol — yours is borderline at 51)_
-• 🚶 *Sat* → 45-60 min outdoor walk
-  _(sunlight = Vitamin D bonus!)_
-
-You're doing this for your health — let's go! 💥""",
-
-    18: """🥤 *Post-Workout Nutrition!* — 6:30 PM
-
-Eat within *30 minutes* of finishing workout:
-
-✅ Plant-based protein shake (GF, unsweetened)
-   OR
-✅ 2 boiled eggs + 1 small banana
-
-This window is critical for:
-• Muscle recovery
-• Blood sugar stabilization
-• Preventing evening hunger
-
-💧 Also drink 2 glasses of water — you lost fluids!""",
-
-    19: """🍽️ *Dinner Time!* — 7:00 PM (~450 cal)
+    17: """🍽️ *Dinner Time!* — 5:00 PM (~450 cal)
 
 ✅ 2 small jowar OR bajra rotis (GF millets — NOT wheat!)
 ✅ ¾ cup rajma / chickpea curry
@@ -266,9 +257,27 @@ This window is critical for:
 ✅ ½ cup beet + pomegranate salad (iron + antioxidants)
 ✅ 1 tsp ghee on roti (helps absorb Vitamin D)
 
-⚠️ *KEEP CARBS LOW AT NIGHT* — critical rule for you!
-High carbs at dinner → spikes triglycerides while you sleep.
-No rice at dinner. No dessert. No fruit juice.""",
+⚠️ *KEEP CARBS LOW* — critical rule for you!
+Eating early dinner helps lower triglycerides and insulin.
+No rice. No dessert. No fruit juice.""",
+
+    18: """💧 *Evening Hydration!* — 6:00 PM
+
+Drink 1 glass of water 🥤
+Alarm set for 4:45 AM tomorrow for your 5 AM workout? ⏰
+
+    19: """� *Prep for Tomorrow's 5 AM Workout!* — 7:00 PM
+
+✅ Workout clothes laid out?
+✅ Water bottle filled and ready?
+✅ Alarm set for 4:45 AM?
+✅ Supplements organized for breakfast?
+
+💧 Drink 1 glass of water
+📵 Reduce screen time — sleep by 9:30 PM
+   so you get 7 hrs rest before your 5 AM workout!
+
+_Early morning workout = better insulin control all day!_""",
 
     20: """📊 *Evening Check-In!* — 8:00 PM
 
