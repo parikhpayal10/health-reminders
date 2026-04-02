@@ -104,16 +104,28 @@ if weekday == 6 and hour == 9:
 reminders = {
     5: """💪 *WORKOUT TIME!* — 5:00 AM (45 min)
 
-*Today's Focus:*
-• 🏋️ *Mon/Wed* → Strength Training
-  _(#1 fix for insulin resistance — builds metabolic muscle)_
-• 🧘 *Tue/Thu* → Yoga/Stretching
+*Today's Focus + Follow Along Videos:*
+
+🏋️ *Mon/Wed* → Strength Training
+  Search YouTube: "Caroline Girvan beginner upper body"
+  OR: "Sydney Cummings 30 min strength no jumping"
+  _(#1 fix for insulin resistance)_
+
+🧘 *Tue/Thu* → Yoga for Pelvic Health
+  Search YouTube: "Yoga With Adriene gentle morning yoga"
+  OR: "yoga for adenomyosis pain relief"
   _(reduces adenomyosis pain + inflammation)_
-• 🚴 *Fri* → Low-impact cardio
+
+🚴 *Fri* → Low-Impact Cardio
+  Search YouTube: "Leslie Sansone 30 minute walk at home"
+  OR: "low impact cardio no jumping Sydney Cummings"
   _(raises HDL cholesterol — yours is borderline at 51)_
-• 🚶 *Sat* → 45-60 min outdoor walk
-  _(sunlight = Vitamin D bonus!)_
-• 🛌 *Sun* → Rest day — light stretching only
+
+🚶 *Sat* → Outdoor Walk 45-60 min
+  No video needed — go outside for Vitamin D bonus! ☀️
+
+🛌 *Sun* → Rest + Light Stretch
+  Search YouTube: "Yoga With Adriene Sunday reset"
 
 You're doing this for your health — let's go! 💥""",
 
