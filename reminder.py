@@ -154,15 +154,22 @@ This window is critical for:
 
 _(Helps fix your high MCV 100.5 — macrocytosis)_""",
 
-    9: """💧 *Hydration Check!* — 9:00 AM
+    9: """💧☕ *Hydration + Chai Time!* — 9:00 AM
 
-Drink 1 full glass of water RIGHT NOW 🥤
-Target for today: *3 liters total*
+✅ Drink 1 full glass of water first 🥤
+✅ Now you can have your *Masala Chai!* ☕
+   _(1 hour after supplements = safe to drink now)_
 
-⚠️ Staying hydrated is critical for your:
-• Elevated platelet count (516 — needs to come down)
-• Kidney health (eGFR 85 — keep it healthy)
-• Constipation (doctor's advice: more water + fiber)""",
+*Your health chai recipe:*
+• 1 cup water + ½ cup milk (dairy or almond)
+• Fresh ginger slices → anti-inflammatory, adenomyosis pain
+• Cinnamon stick → improves *insulin sensitivity* directly!
+• Cardamom + cloves → antioxidants, anti-platelet
+• *NO sugar, NO jaggery, NO honey* ❌
+
+⚠️ Max 1-2 cups per day. No chai after 2 PM.
+
+Target water today: *3 liters total*""",
 
     10: """🥜 *Mid-Morning Snack!* — 10:00 AM (~150 cal)
 
